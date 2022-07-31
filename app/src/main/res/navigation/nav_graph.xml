@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.expensetracker.fragments.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_addPendingFragment"
+            app:destination="@id/addPendingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_descPendingFragment"
+            app:destination="@id/descPendingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_descExpenseFragment"
+            app:destination="@id/descExpenseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPendingFragment"
+        android:name="com.example.expensetracker.fragments.AddPendingFragment"
+        android:label="fragment_add_pending"
+        tools:layout="@layout/fragment_add_pending" >
+        <action
+            android:id="@+id/action_addPendingFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/descPendingFragment"
+        android:name="com.example.expensetracker.fragments.DescPendingFragment"
+        android:label="fragment_desc_pending"
+        tools:layout="@layout/fragment_desc_pending" >
+        <action
+            android:id="@+id/action_descPendingFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/descExpenseFragment"
+        android:name="com.example.expensetracker.fragments.DescExpenseFragment"
+        android:label="fragment_desc_expense"
+        tools:layout="@layout/fragment_desc_expense" />
+</navigation>
